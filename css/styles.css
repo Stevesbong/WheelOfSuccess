@@ -75,6 +75,27 @@ button {
 .header {
   color: var(--color-start);
 }
+@keyframes rightToLeft {
+  from {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-35px)
+  }
+  75% {
+    transform: translateX(10px)
+  }
+  90% {
+    transform: translateX(-25px)
+  }
+  to {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(.21,.61,.35,1);
+  }
+
+}
 
 /* Phrase */
 
@@ -96,6 +117,8 @@ button {
 .show {
   color: #000;
   background-color: #76CE82;
+  transition: 1s;
+  transform: rotateY(360deg);
 }
 
 /* Keyboard */
@@ -110,8 +133,18 @@ button {
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
-  animation-name: shake;
-  animation-duration: 1s;
+}
+
+.wrong {
+  background: var(--color-neutral);
+  border-radius: 5px;
+  font-size: var(--font-size-medium);
+  color: #FFFFFF;
+  animation: wrong 3s;
+}
+@keyframes wrong {
+  from {background: var(--color-lose);}
+  to {background: var(--color-neutral);}
 }
 
 .btn__reset {
@@ -121,6 +154,11 @@ button {
   border-radius: 5px;
   font-size: var(--font-size-medium);
   cursor: pointer;
+  transition: .7s;
+}
+.btn__reset:hover {
+  background: var(--color-win);
+  color: #fff;
 }
 
 /* Overlay */
@@ -140,6 +178,10 @@ button {
 
 .title {
   color: #FFF;
+  transition: .5s;
+}
+.title:hover {
+  transform: scale(1.2);
 }
 
 .start {
@@ -152,6 +194,11 @@ button {
 
 .win {
   background-color: var(--color-win);
+  animation: winColor 2s;
+}
+@keyframes winColor {
+  from { background-color: #fff; }
+  to { background-color: var(--color-win); }
 }
 
 .win a {
@@ -160,12 +207,20 @@ button {
 
 .lose {
   background-color: var(--color-lose);
+  animation: loseColor 2s;
+}
+@keyframes loseColor {
+  from { background-color: #fff; }
+  to { background-color: var(--color-lose); }
 }
 
 .lose a {
   color: var(--color-lose);
 }
 
+.loseHeart {
+  animation: shake .5s;
+}
 @keyframes shake {
   from,
   to {
@@ -187,4 +242,3 @@ button {
     transform: translate3d(5px, 0, 0);
   }
 }
-

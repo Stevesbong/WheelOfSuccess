@@ -7,12 +7,15 @@ const phrases = document.getElementById('phrase').firstElementChild;
 const keyboard = document.getElementById('qwerty');
 const hearts = document.getElementsByClassName('tries');
 const phraseList = [
-    'codeisfun',
-    'teamtreehouse',
-    'javascriptproject',
-    'practiceallthetime',
-    'everydaycode'
+    'code is fun',
+    'team tree house',
+    'javascript pr!oject',
+    'practice all the time',
+    'everyday code'
 ]
+
+// CHECK SPACE AND SPECIAL CHARACTERS
+const specialChar = `!@#$%^&*)(_+-=}{][\],./}) `;
 
 let missed = 0;
 
@@ -25,9 +28,11 @@ const randomPhraseArray = arr => {
 const addPhraseToDisplay = phraseString => {
     for( let i = 0; i < phraseString.length; i++ ) {
         const li = document.createElement('li');
-        li.textContent = phraseString[i];
-        li.className = 'letter';
-        phrases.appendChild(li);
+        if(specialChar.indexOf(phraseString[i]) === -1){
+            li.textContent = phraseString[i];
+            li.className = 'letter';
+            phrases.appendChild(li);
+        }
     }
 }
 

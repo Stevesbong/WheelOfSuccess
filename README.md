@@ -1,4 +1,4 @@
-# [Portfolio Website](https://stevesbong.github.io/WheelOfSuccess)
+# [Website](https://stevesbong.github.io/WheelOfSuccess)
 
 Website preview:
 

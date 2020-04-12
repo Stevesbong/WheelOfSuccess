@@ -32,6 +32,9 @@ const addPhraseToDisplay = phraseString => {
             li.textContent = phraseString[i];
             li.className = 'letter';
             phrases.appendChild(li);
+        } else {
+            li.className = 'space';
+            phrases.appendChild(li);
         }
     }
 }

@@ -23,9 +23,9 @@
 }
 
 body {
+  display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  display: flex;
   height: 100vh;
 }
 
@@ -82,13 +82,13 @@ button {
   }
   60% {
     opacity: 1;
-    transform: translateX(-35px)
+    transform: translateX(-55px);
   }
   75% {
-    transform: translateX(10px)
+    transform: translateX(20px);
   }
   90% {
-    transform: translateX(-25px)
+    transform: translateX(-55px);
   }
   to {
     transform: translateX(0);
@@ -164,7 +164,7 @@ button {
   border-radius: 5px;
   font-size: var(--font-size-medium);
   cursor: pointer;
-  transition: .7s;
+  transition: 1s;
 }
 
 .btn__reset:hover {
@@ -190,7 +190,7 @@ button {
 
 .title {
   color: #FFF;
-  transition: .5s;
+  transition: .5s .2s;
 }
 .title:hover {
   transform: scale(1.2);
@@ -206,7 +206,7 @@ button {
 
 .win {
   background-color: var(--color-win);
-  animation: winColor 2s;
+  animation: winColor 3s;
 }
 @keyframes winColor {
   from { background-color: #fff; }
@@ -219,7 +219,7 @@ button {
 
 .lose {
   background-color: var(--color-lose);
-  animation: loseColor 2s;
+  animation: loseColor 3s;
 }
 @keyframes loseColor {
   from { background-color: #fff; }

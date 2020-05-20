@@ -2,14 +2,14 @@
 
 const overlay = document.getElementById('overlay');
 const header = document.querySelector('.header');
-const startsGame = document.querySelector('.btn__reset');
+const startGameBtn = document.querySelector('.btn__reset');
 const phrases = document.getElementById('phrase').firstElementChild;
 const keyboard = document.getElementById('qwerty');
 const hearts = document.getElementsByClassName('tries');
 const phraseList = [
     'code is fun',
     'team tree house',
-    'javascript pr!oject',
+    'javascript project',
     'practice all the time',
     'everyday code'
 ]
@@ -40,10 +40,14 @@ const addPhraseToDisplay = phraseString => {
 }
 
 // STARTS THE WHEEL OF SUCCESS GAME
-startsGame.addEventListener('click', () => {
+startGameBtn.addEventListener('click', () => {
     overlay.style.display = 'none';
     header.style.animation = 'rightToLeft 1s'
     
+
+    // PHRASES ANIMATION WILL ADD HERE
+    letterAnimation()
+
     // DELETES CLASS NON-NESSECERY CLASS NAME 
     if(overlay.className.match('win')) {
         overlay.classList.remove('win');
@@ -141,4 +145,15 @@ function resetGame() {
         heart.firstElementChild.src = 'images/liveHeart.png';
         heart.firstElementChild.classList.remove('loseHeart');
     }
+}
+
+
+// PHRASE ANIMATION
+
+function letterAnimation() {
+    const letters = document.querySelectorAll('.letter');
+    console.log(typeof letters)
+    // letters.forEach( (e) => {
+    //     console.log(e);
+    // })
 }

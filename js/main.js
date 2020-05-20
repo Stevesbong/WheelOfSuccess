@@ -46,8 +46,7 @@ startGameBtn.addEventListener('click', () => {
     
 
     // PHRASES ANIMATION WILL ADD HERE
-    letterAnimation()
-
+    
     // DELETES CLASS NON-NESSECERY CLASS NAME 
     if(overlay.className.match('win')) {
         overlay.classList.remove('win');
@@ -56,6 +55,7 @@ startGameBtn.addEventListener('click', () => {
     }
     
     addPhraseToDisplay(randomPhraseArray(phraseList))
+    letterAnimation()
 })
 
 // KEYBOARD DISPLAY CLICK HANDLER
@@ -151,9 +151,68 @@ function resetGame() {
 // PHRASE ANIMATION
 
 function letterAnimation() {
-    const letters = document.querySelectorAll('.letter');
-    console.log(typeof letters)
-    // letters.forEach( (e) => {
-    //     console.log(e);
-    // })
+    // GET LETTER ARRAY
+    const letters = document.querySelectorAll('li.letter');
+
+    // COLOR CHANGE START 0 INDEX LETTER ARRAY
+    setTimeout( ()=> {
+        for(let i = 0; i < letters.length; i++) {
+
+            // FUNCTION EXECUTE RIGHT AWAY AS FOR LOOP START
+            ( (i) => {
+                setTimeout(() => {
+                    letters[i].style.backgroundColor = "var(--color-start)";
+                }, i*100);
+            })(i)
+
+        }
+    }, 800)
+
+    // AFTER .1s COLOR CHANGE TO GRAY START 0 INDEX LETTER ARRAY
+    setTimeout(() => {
+        for(let i = 0; i < letters.length; i++) {
+
+            // FUNCTION EXECUTE RIGHT AWAY AS FOR LOOP START
+            ( (i) => {
+                setTimeout(() => {
+                    letters[i].style.backgroundColor = "var(--color-neutral-light)"
+                }, i * 100 + 20);
+            })(i)
+
+        }
+    }, 900);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //working
+    // setTimeout( ()=> {
+    //     for(let i = 0; i < letters.length; i++) {
+    //         ( (i) => {
+    //             setTimeout(() => {
+    //                 letters[i].style.backgroundColor = "var(--color-start)";
+    //             }, i*190);
+    //         })(i)
+    //     }
+    //     for(let i = 0; i < letters.length; i++) {
+    //         ( (i) => {
+    //             setTimeout(() => {
+    //                 letters[i].style.backgroundColor = "var(--color-neutral-light)"
+    //             }, i * 190 + 100);
+    //         })(i)
+    //     }
+    // }, 1000)

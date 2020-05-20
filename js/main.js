@@ -168,7 +168,7 @@ function letterAnimation() {
         }
     }, 800)
 
-    // AFTER .1s COLOR CHANGE TO GRAY START 0 INDEX LETTER ARRAY
+    // AFTER .1s DELAY COLOR CHANGE TO GRAY START 0 INDEX LETTER ARRAY
     setTimeout(() => {
         for(let i = 0; i < letters.length; i++) {
 

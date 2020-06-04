@@ -116,7 +116,7 @@ button {
 
 .show {
   color: #000;
-  background-color: #76CE82;
+  background-color: #76CE82!important;
   transition: 1s;
   transform: rotateY(360deg);
 }

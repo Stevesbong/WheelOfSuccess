@@ -166,7 +166,7 @@ function letterAnimation() {
             })(i)
 
         }
-    }, 800)
+    }, 100)
 
     // AFTER .1s DELAY COLOR CHANGE TO GRAY START 0 INDEX LETTER ARRAY
     setTimeout(() => {
@@ -180,39 +180,5 @@ function letterAnimation() {
             })(i)
 
         }
-    }, 900);
+    }, 200);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //working
-    // setTimeout( ()=> {
-    //     for(let i = 0; i < letters.length; i++) {
-    //         ( (i) => {
-    //             setTimeout(() => {
-    //                 letters[i].style.backgroundColor = "var(--color-start)";
-    //             }, i*190);
-    //         })(i)
-    //     }
-    //     for(let i = 0; i < letters.length; i++) {
-    //         ( (i) => {
-    //             setTimeout(() => {
-    //                 letters[i].style.backgroundColor = "var(--color-neutral-light)"
-    //             }, i * 190 + 100);
-    //         })(i)
-    //     }
-    // }, 1000)
